@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"strconv"
 	"strings"
@@ -21,7 +22,12 @@ func parseInputToMap(input string) (map[string]map[string]int, error) {
 	stringSlice := strings.Split(input, ", ")
 
 	for _, v := range stringSlice {
+
 		rRailway := []rune(v)
+		if len(rRailway) != 3 {
+			return nil, errors.New("worng input format")
+		}
+
 		startCity := string(rRailway[0])
 		destinationCity := string(rRailway[1])
 		length, errConver := strconv.Atoi(string(rRailway[2]))
