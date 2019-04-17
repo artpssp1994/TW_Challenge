@@ -1,13 +1,16 @@
-package core
+package graph
 
+//FindNuberOfTripsWithStop - find possible route by stop limitation and can set specfic stop number by flag
 func FindNuberOfTripsWithStop(railWays map[string]map[string]int, sStart string, sStop string, cStop int,
 	maxStop int, isNeedExactlyStop bool) int {
 
 	count := 0
+	//stop recursive if it reach max stop
 	if cStop > maxStop {
 		return 0
 	}
 
+	//add possible ways to reach destination
 	if sStart == sStop && cStop > 0 {
 		if isNeedExactlyStop && cStop == maxStop {
 			count += 1
@@ -25,9 +28,11 @@ func FindNuberOfTripsWithStop(railWays map[string]map[string]int, sStart string,
 	return count
 }
 
+//FindNuberOfTripsWithDistance - find possible route by distance limitation
 func FindNuberOfTripsWithDistance(railWays map[string]map[string]int, sStart string, sStop string, cDistance int,
 	maxDistance int) int {
 	count := 0
+	//stop recursive if it reach max distance
 	if cDistance >= maxDistance {
 		return 0
 	}

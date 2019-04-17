@@ -1,4 +1,4 @@
-package core
+package graph
 
 var mockRailWays = map[string]map[string]int{
 	"A": map[string]int{

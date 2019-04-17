@@ -1,4 +1,4 @@
-package main
+package format
 
 import (
 	"testing"
@@ -29,14 +29,14 @@ func Test_parseInputToMap_SUCCESS(t *testing.T) {
 		},
 	}
 
-	aValue, err := parseInputToMap("AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7")
+	aValue, err := ParseInputToMap("AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7")
 
 	assert.Equal(t, eValue, aValue)
 	assert.Nil(t, err)
 }
 
 func Test_parseInputToMap_FAIL(t *testing.T) {
-	aValue, err := parseInputToMap("AB5, BCW")
+	aValue, err := ParseInputToMap("AB5, BCW")
 
 	assert.NotNil(t, err)
 	assert.Nil(t, aValue)

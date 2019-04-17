@@ -1,4 +1,4 @@
-package core
+package graph
 
 import (
 	"errors"
@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+//FindDistanceByRoute - find distance by specific route
 func FindDistanceByRoute(railWays map[string]map[string]int, path string) (string, error) {
 	cityList := strings.Split(path, "-")
 	result := ""
