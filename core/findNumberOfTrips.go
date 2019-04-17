@@ -1,6 +1,6 @@
 package core
 
-func findNuberOfTripsWithStop(railWays map[string]map[string]int, sStart string, sStop string, cStop int,
+func FindNuberOfTripsWithStop(railWays map[string]map[string]int, sStart string, sStop string, cStop int,
 	maxStop int, isNeedExactlyStop bool) int {
 
 	count := 0
@@ -18,14 +18,14 @@ func findNuberOfTripsWithStop(railWays map[string]map[string]int, sStart string,
 
 	cStop += +1
 	for city, _ := range railWays[sStart] {
-		n := findNuberOfTripsWithStop(railWays, city, sStop, cStop, maxStop, isNeedExactlyStop)
+		n := FindNuberOfTripsWithStop(railWays, city, sStop, cStop, maxStop, isNeedExactlyStop)
 		count += n
 	}
 
 	return count
 }
 
-func findNuberOfTripsWithDistance(railWays map[string]map[string]int, sStart string, sStop string, cDistance int,
+func FindNuberOfTripsWithDistance(railWays map[string]map[string]int, sStart string, sStop string, cDistance int,
 	maxDistance int) int {
 	count := 0
 	if cDistance >= maxDistance {
@@ -38,7 +38,7 @@ func findNuberOfTripsWithDistance(railWays map[string]map[string]int, sStart str
 
 	for city, _ := range railWays[sStart] {
 		d := cDistance + railWays[sStart][city]
-		n := findNuberOfTripsWithDistance(railWays, city, sStop, d, maxDistance)
+		n := FindNuberOfTripsWithDistance(railWays, city, sStop, d, maxDistance)
 		count += n
 	}
 

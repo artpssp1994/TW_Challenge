@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func findDistanceByRoute(railWays map[string]map[string]int, path string) (string, error) {
+func FindDistanceByRoute(railWays map[string]map[string]int, path string) (string, error) {
 	cityList := strings.Split(path, "-")
 	result := ""
 
