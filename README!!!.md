@@ -4,7 +4,9 @@
 
 ### Structer of project
 
-This prject have main two main part of code
+This prject have main two main part of code to make it easy to change 
+example if you need to change flow it can change in main file or if you change
+any business logic you can change go file in core folder
 
   - Root : location of main.go file controll main process of this application
   - Core : location of go file to calculate logic
